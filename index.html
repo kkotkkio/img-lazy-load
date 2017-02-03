@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Lazy Loading</title>
+  <style media="screen">
+  * { margin: 0; padding: 0; }
+  .wrap { width: 1000px; margin: 0 auto; }
+  ul, li { list-style: none }
+  ul { width: 100%; float:left; }
+  ul li { width: 30%; float:left; }
+  ul:after { clear: both; display: block; }
+  li img { width: 100%; height: 300px; }
+  .mt1200 { margin-top: 1200px; }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <ul class="first">
+      <li><img data-original="http://cfs15.tistory.com/image/16/tistory/2009/02/24/21/39/49a3ea934d631"/></li>
+      <li><img data-original="http://cfs11.tistory.com/image/33/tistory/2009/02/26/22/41/49a69bf854e7c"/></li>
+      <li><img data-original="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSPTBS8kIhAoo-ctBo1ao9GOJnAqeiEFu_r1o4eZkaTZWpBSvSX"/></li>
+    </ul>
+    <ul class="second mt1200">
+      <li><img data-original="http://cfile1.uf.tistory.com/image/19272E2F4C67E49AB98D32"/></li>
+      <li><img data-original="http://cfs6.tistory.com/upload_control/download.blog?fhandle=YmxvZzEwODM3OUBmczYudGlzdG9yeS5jb206L2F0dGFjaC8xNi8xMzAwMDAwMDE2MjMucG5n"/></li>
+      <li><img data-original="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRT9_xyRkNaZlyf5k8lDqQdzhbQvW_cXdl_0GGR8i7hYh_25m_K"/></li>
+    </ul>
+  </div>
+  <script>
+  $(function() {
+    $("img").lazyload({
+      effect : "fadeIn",
+    });
+  });
+  </script>
+</body>
+</html>
